@@ -16,7 +16,10 @@ public class RegValidator implements Validator {
 
         if(patientRegistration.getFname()==null||patientRegistration.getFname().equals("")){
             errors.rejectValue("fname","patientRegistration.fname","First Name cannot be empty");
+        } else if(patientRegistration.getFname().length()<3){
+            errors.rejectValue("fname","patientRegistration.fname","Firstname cannot be less than 3 letters");
         }
+
         if(patientRegistration.getLname()==null||patientRegistration.getLname().equals("")){
             errors.rejectValue("lname","patientRegistration.lname","Last name cannot be empty");
         }
@@ -28,6 +31,7 @@ public class RegValidator implements Validator {
         if(patientRegistration.getEmailID()==null||patientRegistration.getGender().equals("")){
             errors.rejectValue("emailID","patientRegistration.emailID","Email ID cannot be empty");
         }
+
 
 
     }
